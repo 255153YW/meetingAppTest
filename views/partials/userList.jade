@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+	p User List
+	br
+	table(class="table table-striped" ng-repeat="data in dataHolder")
+		tr(ng-repeat="(key, val) in data")
+			td {{key}}: {{val}}

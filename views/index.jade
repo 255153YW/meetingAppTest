@@ -1,0 +1,38 @@
+extends layout
+
+block content
+	h1= title
+	p Welcome to #{title}
+	div(ng-app="myApp" ng-controller="myCtrl")
+		div
+			a(class='button', ng-click='getUserlistClick()') Get userlist
+			br
+			a(class='button', ng-click='generateDataClick()') insert random meetings
+			br
+			a(class='button', ng-click='meetingCountClick()') total amount of meetings
+			br
+			a(class='button', ng-click='upcomingMeetingClick()') Upcoming Meetings
+			br
+			a(class='button', ng-click='meetingMemberAvgClick()') Average amount of people in a meeting
+			br
+			a(class='button', ng-click='nextMeetingClick()') Next meeting for each person
+			br
+			a(class='button', ng-click='longestMeetingClick()') longest meeting
+			br
+		div(ng-switch on="currentProcess")
+			div(ng-switch-when="getUserList")
+				get-user-list
+			div(ng-switch-when="generateData")
+				generate-data
+			div(ng-switch-when="meetingCount")
+				meeting-count
+			div(ng-switch-when="upcomingMeeting")
+				upcoming-meeting
+			div(ng-switch-when="meetingMemberAvg")
+				meeting-member-avg
+			div(ng-switch-when="nextMeeting")
+				next-meeting
+			div(ng-switch-when="longestMeeting") 
+				longest-meeting
+			div(ng-switch-default)
+				
